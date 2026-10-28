@@ -7,7 +7,9 @@ This project explores pharmaceutical sales data from 2014 to 2019 to identify sa
 **Data Quality check conclusions**
 
 Dataset from kaggle.com "Pharma sales data" (https://www.kaggle.com/datasets/milanzdravkovic/pharma-sales-data)
+
 Data from 2019 is incomplete (ending on the 8th of October), so some analysis will be made accordingly: sometimes excluding 2019, or using a like-for-like comparison (years from January to September).
+
 Raw dataset "sales_monthly" is an unreliable dataset, values do not match the rest of the tables, with 8 months differing in total sales (0 total sales in January 2017 for example) therefore all analysis will be made from "sales_daily". 
 
 Selected group of drugs from the dataset is classified to the following Anatomical Therapeutic Chemical (ATC) Classification System categories:
