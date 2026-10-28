@@ -1,7 +1,8 @@
-# pharma_sales_analysis
+# pharma_sales_analysis (TBC)
 Study Case - Analysis of Pharmaceutical Sales of Individual Pharmarcy
 
 **Project Overview**
+
 This project explores pharmaceutical sales data from 2014 to 2019 to identify sales trends, evaluate product category performance, and uncover seasonal patterns.
 
 **Data Quality check conclusions**
