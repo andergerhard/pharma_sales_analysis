@@ -1,5 +1,6 @@
--- Q1. Which ATC categories concentrate most of the sales?
--- Data: sales_daily, full period (2014 - Oct 2019)
+-- =============================================================
+-- Q1. Which ATC categories contribute the most to total sales?
+-- =============================================================
 
 WITH per_category AS(
 SELECT 'M01AB' AS category, SUM(m01ab) AS total FROM sales_daily
