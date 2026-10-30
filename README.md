@@ -29,12 +29,12 @@ A company that sells or distributes medicines needs to know which product groups
 
 | ATC Category | Description |
 |---|---|
-| M01AB | Anti-inflammatory and antirheumatic products, acetic acid derivatives |
-| M01AE | Anti-inflammatory and antirheumatic products, propionic acid derivatives |
-| N02BA | Other analgesics and antipyretics, salicylic acid and derivatives |
-| N02BE | Other analgesics and antipyretics, anilides |
-| N05B | Psycholeptics, anxiolytics |
-| N05C | Psycholeptics, hypnotics and sedatives |
+| M01AB | Anti-inflammatory and antirheumatic products, Acetic acid derivatives |
+| M01AE | Anti-inflammatory and antirheumatic products, Propionic acid derivatives |
+| N02BA | Other analgesics and antipyretics, Salicylic acid and derivatives |
+| N02BE | Other analgesics and antipyretics, Pyrazolones and Anilides |
+| N05B | Psycholeptics drugs, Anxiolytic drugs |
+| N05C | Psycholeptics drugs, Hypnotics and sedatives drugs |
 | R03 | Drugs for obstructive airway diseases |
 | R06 | Antihistamines for systemic use |
 
