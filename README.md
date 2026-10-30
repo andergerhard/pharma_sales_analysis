@@ -69,14 +69,14 @@ The seasonal index compares each month with the average month (100 = average).
 - January (index 126) and December (120) record the highest sales, 26% and 20% above the average month, respectively.
 - The lowest sales occur in June (81), July (79) and August (81), approximately 19–21% below average.
 
-<kbd> <img src="visuals/Q3_total_sales_seasonal_index.png" width="500"> </kbd>
+<kbd> <img src="visuals/Q3_total_sales_seasonal_index.png" width="600"> </kbd>
 
 **By category**
 
 - **N02BE** and **R03** reinforce the overall seasonal pattern, with pronounced winter peaks and summer declines. **N02BE** ranges from 66 in July (34% below average) to 138 in January (38% above average). **R03** ranges from 54 in July (46% below average) to 144 in December (44% above average).
 - **R06** shows the opposite pattern, with below-average sales during winter and above-average sales in spring and early summer. Its lowest indices are in December (48) and January (57), while April (163), May (179) and June (153) record sales 63%, 79% and 53% above average, respectively.
 
-<kbd> <img src="visuals/Q3_seasonal_index_by_category_heatmap.png" width="700"> </kbd>
+<kbd> <img src="visuals/Q3_seasonal_index_by_category_heatmap.png" width="600"> </kbd>
 
 ### 4. Which categories are growing or declining year over year?
 
@@ -89,21 +89,25 @@ The seasonal index compares each month with the average month (100 = average).
 - All 8 categories fell in 2017, the largest drop being **N02BE** (-30.57%), which points to a common factor. The data does not show its cause.
 - CAGR depends on the starting year. The negative CAGR of **N05B** and **N05C** is driven by a high 2014 and should be read together with the year-over-year table.
 
-<kbd> <img src="visuals/Q4_yoy_growth_by_category_heatmap.png" width="450"> </kbd>
+<kbd> <img src="visuals/Q4_yoy_growth_by_category_heatmap.png" width="500"> </kbd>
 <kbd> <img src="visuals/Q4_cagr_by_category.png" width="450"> </kbd>
 
-Recommendations
+## Recommendations
 
-[To write after the analysis is complete]
+Based on the observed sales patterns, the analysis suggests several opportunities for improving inventory planning and demand forecasting:
 
-Limitations and next steps
+- **Seasonal stock planning:** Adjust inventory levels according to the seasonal index of each ATC category, anticipating higher demand during peak months and lower demand during off-peak periods.
 
-[To write]
+- **Category-specific planning:** Consider different seasonal patterns across categories. While N02BE and R03 show higher sales during winter, R06 peaks in spring and early summer. Applying a single seasonal strategy across all categories may therefore be inefficient.
 
-Repository structure and how to reproduce
+- **Demand forecasting:** Use historical monthly sales and seasonal indices as a starting point for forecasting future demand, while incorporating additional data to improve forecast accuracy.
 
-[To write]
+## Limitations
 
-Tools
+- **Limited business context:** The dataset contains sales volumes but does not include pricing, revenue or patient numbers. Consequently, it is not possible to assess price trends, patient demand or the underlying drivers of sales changes.
 
-PostgreSQL, Python, Power BI
+- **Incomplete 2019 data:** The dataset only covers January to early October 2019. Therefore, 2019 was excluded from analyses requiring complete calendar years, such as CAGR and seasonal comparisons.
+
+- **Unexplained sales decline:** The observed decline in sales in 2017 cannot be attributed to a specific cause, as the dataset does not provide additional market or business context.
+
+- **CAGR sensitivity:** CAGR results depend on the selected starting and ending years and may not fully reflect intermediate fluctuations, particularly when analysing periods with significant changes in sales.
