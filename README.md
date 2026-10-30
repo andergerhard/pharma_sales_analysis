@@ -26,7 +26,7 @@ Selected group of drugs from the dataset is classified to the following Anatomic
 
 ------- A COMPLETAR ---------
 
-**1. How have pharmaceutical sales evolved over time?**
+**1. Which ATC categories concentrate most of the sales?**
 
 A redactar:
 - Conclusion (Q1)
