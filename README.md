@@ -1,90 +1,108 @@
-# pharma_sales_analysis (TBC)
-Study Case - Analysis of Pharmaceutical Sales of Individual Pharmarcy
+# Pharmaceutical Sales Analysis by ATC Category
 
-**Project Overview**
+Analysis of almost six years of daily pharmaceutical sales across 8 ATC drug categories: which categories drive sales, how sales evolved year by year, and how strongly they follow the seasons. Built with PostgreSQL (data checks and analysis) and Power BI (visuals).
 
-This project explores pharmaceutical sales data from 2014 to 2019 to identify sales trends, evaluate product category performance, and uncover seasonal patterns.
+## Key findings
 
-**Data Quality check conclusions**
+- Sales are highly concentrated. **N02BE** alone accounts for 49.38% of total sales, and the top 3 categories (**N02BE**, **N05B**, **R03**) reach 73.09%.
+- 2017 was a break in the series. Total sales grew until 2016, then fell 23.12% in 2017, with all 8 categories declining at the same time. The data does not show the cause.
+- Growth is uneven across categories. **R03** and **R06** grow most consistently, **N02BA** is the only category in sustained decline, and the rest follow mixed paths.
+- Seasonality is clear. Total sales are above the average month from October to March and below it from April to September. **R06** is the exception: it peaks in spring.
 
-Dataset from kaggle.com "Pharma sales data" (https://www.kaggle.com/datasets/milanzdravkovic/pharma-sales-data)
+<kbd> <img src="visuals/Q3_monthly_sales_trend_by_year.png" width="600"> </kbd>
 
-Data from 2019 is incomplete (ending on the 8th of October), so some analysis will be made accordingly: sometimes excluding 2019, or using a like-for-like comparison (years from January to September).
+## Business context and questions
 
-Raw dataset "sales_monthly" is an unreliable dataset, values do not match the rest of the tables, with 8 months differing in total sales (0 total sales in January 2017 for example) therefore all analysis will be made from "sales_daily". 
+A company that sells or distributes medicines needs to know which product groups carry its sales, whether they are growing, and when demand peaks, to support decisions such as stock planning and campaign timing. This project answers four questions with that in mind:
 
-Selected group of drugs from the dataset is classified to the following Anatomical Therapeutic Chemical (ATC) Classification System categories:
+1. Which ATC categories concentrate most of the sales?
+2. How have total sales evolved over the years?
+3. Is there a seasonal pattern in pharmaceutical sales?
+4. Which categories are growing or declining year over year?
 
-- M01AB - Anti-inflammatory and antirheumatic products, non-steroids, Acetic acid derivatives and related substances
-- M01AE - Anti-inflammatory and antirheumatic products, non-steroids, Propionic acid derivatives
-- N02BA - Other analgesics and antipyretics, Salicylic acid and derivatives
-- N02BE - Other analgesics and antipyretics, Pyrazolones and Anilides
-- N05B - Psycholeptics drugs, Anxiolytic drugs
-- N05C - Psycholeptics drugs, Hypnotics and sedatives drugs
-- R03 - Drugs for obstructive airway diseases
-- R06 - Antihistamines for systemic use
+## Data
 
-------- A COMPLETAR ---------
+- Source: Kaggle, "Pharma sales data" (sales of drugs classified in 8 ATC categories, January 2014 to October 2019). Provided at four granularities: hourly, daily, weekly and monthly.
+- Period: starts on 2 January 2014 and ends on 8 October 2019, so 2019 is an incomplete year.
+- Unit of sales: units sold, not revenue. Throughout this README, "sales" means units sold, so the shares and trends below describe volume and not value.
+- ATC code	Description:
 
-**1. Which ATC categories concentrate most of the sales?**
+| ATC Category | Description |
+|---|---|
+| M01AB | Anti-inflammatory and antirheumatic products, acetic acid derivatives |
+| M01AE | Anti-inflammatory and antirheumatic products, propionic acid derivatives |
+| N02BA | Other analgesics and antipyretics, salicylic acid and derivatives |
+| N02BE | Other analgesics and antipyretics, anilides |
+| N05B | Psycholeptics, anxiolytics |
+| N05C | Psycholeptics, hypnotics and sedatives |
+| R03 | Drugs for obstructive airway diseases |
+| R06 | Antihistamines for systemic use |
 
-A redactar:
-- Conclusion (Q1)
-- Findings:
+### Data quality
 
--N02BE is the leading category, accounting for 49.38% of total sales, followed by N05B with 14.61%.
+The four raw tables were loaded unchanged into PostgreSQL and checked before any analysis. The hourly, daily and weekly tables add up to the same total. The monthly table does not match the daily one in 8 months (one of them at zero), so all monthly figures in this project are built from the daily table. <br />Details are in [`sql/02_Data_Quality_Check.sql`](sql/02_Data_Quality_Check.sql).
 
--The top 3 categories (N02BE, N05B, R03) reach 73.09% of total sales, indicating a high concentration of sales in a small number of categories.
+## Analysis
 
--N05C is the smallest category, representing only 0.98% of total sales.
+### 1. Which ATC categories concentrate most of the sales?
+- **N02BE** is the leading category, accounting for 49.38% of total sales, followed by **N05B** with 14.61%.
+- The top 3 categories (**N02BE**, **N05B**, **R03**) reach 73.09% of total sales, a high concentration in a small number of categories.
+- **N05C** is the smallest category, with only 0.98% of total sales.
 
-**2. How have pharmaceutical sales evolved over the years?**
+<kbd> <img src="visuals/Q1_sales_concentration_by_category.png" width="700"> </kbd>
 
-A redactar:
-- Conclusion (Q2)
-- Findings:
+### 2. How have total sales evolved over the years?
+- Sales grew from 2014 to 2016 (+12.42% in 2015, +10.91% in 2016).
+- They then fell 23.12% in 2017. The data does not show the cause.
+- 2018 rebounded +17.97%, back to the average level of 2014-2016 but still about 9% below the 2016 peak.
+- Comparing January to September in every year so that 2019 can be included, 2019 is flat versus 2018 (+0.70%). This excludes October to December, so it should not be extrapolated to the full year.
 
--Total sales grew from 2014 to 2016 (+12.42% in 2015, +10.91% in 2016).
+<kbd> <img src="visuals/Q2_total_sales_yoy_growth.png" width="460"> </kbd> <kbd> <img src="visuals/Q2_total_sales_yoy_growth_Jan-Sept.png" width="480"> </kbd>
 
--Followed by a steep decline of -23.12% YoY growth in 2017. Data does not show the cause.
+### 3. Is there a seasonal pattern in pharmaceutical sales?
 
--2018 rebounded +17.97%, back to the average level of 2014-2016, but still about 9% below the 2016 peak.
+The seasonal index compares each month with the average month (100 = average).
 
--Jan-Sep comparison including 2019:
-Sales are flat compared to 2018 (+0.70% YoY growth). This excludes Oct-Dec, so it should not be extrapolated to the full year.
+**Total sales**
 
-**3. Is there a seasonal pattern in pharmaceutical sales?**
+- Sales are generally above average from October to March and below average from April to September, revealing a clear winter-driven seasonal pattern.
+- January (index 126) and December (120) record the highest sales, 26% and 20% above the average month, respectively.
+- The lowest sales occur in June (81), July (79) and August (81), approximately 19–21% below average.
 
-A redactar mejor:
-- Conclusion (Q3)
-- Findings:
-- Monthly trend by total sales:
+<kbd> <img src="visuals/Q3_total_sales_seasonal_index.png" width="500"> </kbd>
 
--Sales show a clear seasonal pattern within the year: winter months concentrate the highest sales. January (seasonal index 126) and December (120) lead the
-monthly average, with sales 26% and 20% above the average month, respectively. Summer months concentrate the lowest sales. June (seasonal index 81), July (79) and August (81) show sales around 20% below the average month.
+**By category**
 
--Colder months in general have a higher seasonal index, with above average sales from October to March, and below average from April to September.
-- Monthly trend by category:
+- **N02BE** and **R03** reinforce the overall seasonal pattern, with pronounced winter peaks and summer declines. **N02BE** ranges from 66 in July (34% below average) to 138 in January (38% above average). **R03** ranges from 54 in July (46% below average) to 144 in December (44% above average).
+- **R06** shows the opposite pattern, with below-average sales during winter and above-average sales in spring and early summer. Its lowest indices are in December (48) and January (57), while April (163), May (179) and June (153) record sales 63%, 79% and 53% above average, respectively.
 
--N02BE and R03 accentuate the overall seasonal trend, with sales far below the average month in June, July and August, and sales far above the average month in January and December.
+<kbd> <img src="visuals/Q3_seasonal_index_by_category_heatmap.png" width="700"> </kbd>
 
--For N02BE, January (seasonal index 138) and December (133) show sales 38% and 33% above the average month, respectively. While June (67), July (66) and August (69) show sales around 33% below the average month.
+### 4. Which categories are growing or declining year over year?
 
--For R03, January (seasonal index 124) and December (144) show sales 24% and 44% above the average month, respectively. while July (54) and August (57) show sales around 46% and 43% below the average month, respectively.
+- ***Growing:*** **R03** (CAGR 2014-2018: 20.6%) and R06 (10.6%) grew in three of the four years. Their only decline was in 2017 (-11.39% and -7.16%), and 2018 is the highest year of the series for both.
 
--R06 shows an opposite pattern, January (57) and December (48) show sales 43% and 52% below the average month, respectively. while April (163), May (179) and June (153) show sales 63%, 79% and 53% above the average month, respectively.
+- ***Declining:*** **N02BA** is the only category in sustained decline (CAGR -8.7%). It grew only in 2016 (+2.90%), and 2018 is its lowest year.
 
-**4. Which categories are growing or declining year over year?**
+- ***Mixed:*** **N02BE** (CAGR 4.9%) is highly volatile, with -30.57% in 2017 and +21.30% in 2018. **N05C** swings between -41.68% (2015) and +30.31% (2018). **M01AB** and **M01AE** peaked in 2016 and have declined or stagnated since, so their positive CAGR (5.4% and 2.5%) overstates their recent trend.
+  
+- All 8 categories fell in 2017, the largest drop being **N02BE** (-30.57%), which points to a common factor. The data does not show its cause.
+- CAGR depends on the starting year. The negative CAGR of **N05B** and **N05C** is driven by a high 2014 and should be read together with the year-over-year table.
 
-A redactar:
-- Conclusion (Q4)
-- Findings:
-- Growing: R03 (CAGR 20.6%) and R06 (10.6%) show strong YoY growth, their only decline was in 2017 (-11.39% and -7.16%), and 2018 is the year with the highest sales for both.
-- Declining: N02BA is the only category in sustained decline (CAGR -8.7%). It grew only in 2016 (+2.90%) and 2018 is the year with the lowest sales.
-- Mixed: N02BE (CAGR 4.9%) is highly volatile, with -30.57% in 2017 and +21.30% in 2018. Same for N05C, with swings between -41.68% (2015) and +30.31% (2018).
+[Add YoY heatmap or CAGR bar chart]
 
--M01AB and M01AE peaked in 2016 and have declined or stagnated since, so their positive CAGR (5.4% and 2.5%) overstates their recent trend.
+Recommendations
 
--All 8 categories fell in 2017 (largest drop: N02BE, -30.57%), which points to a common factor. The data does not show its cause.
+[To write after the analysis is complete]
 
--Note: CAGR depends on the starting year. The negative CAGR of N05B and N05C is driven by a high 2014 and should be read together with the YoY table.
+Limitations and next steps
+
+[To write]
+
+Repository structure and how to reproduce
+
+[To write]
+
+Tools
+
+PostgreSQL, Python, Power BI
