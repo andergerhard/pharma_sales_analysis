@@ -89,7 +89,8 @@ The seasonal index compares each month with the average month (100 = average).
 - All 8 categories fell in 2017, the largest drop being **N02BE** (-30.57%), which points to a common factor. The data does not show its cause.
 - CAGR depends on the starting year. The negative CAGR of **N05B** and **N05C** is driven by a high 2014 and should be read together with the year-over-year table.
 
-[Add YoY heatmap or CAGR bar chart]
+<kbd> <img src="visuals/Q4_yoy_growth_by_category_heatmap.png" width="450"> </kbd>
+<kbd> <img src="visuals/Q4_cagr_by_category.png" width="450"> </kbd>
 
 Recommendations
 
