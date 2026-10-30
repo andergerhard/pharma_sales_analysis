@@ -25,7 +25,7 @@ A company that sells or distributes medicines needs to know which product groups
 - Source: Kaggle, "Pharma sales data" (sales of drugs classified in 8 ATC categories, January 2014 to October 2019). Provided at four granularities: hourly, daily, weekly and monthly.
 - Period: starts on 2 January 2014 and ends on 8 October 2019, so 2019 is an incomplete year.
 - Unit of sales: units sold, not revenue. Throughout this README, "sales" means units sold, so the shares and trends below describe volume and not value.
-- ATC code	Description:
+- ATC Category	Description:
 
 | ATC Category | Description |
 |---|---|
@@ -101,6 +101,8 @@ Based on the observed sales patterns, the analysis suggests several opportunitie
 - **Category-specific planning:** Consider different seasonal patterns across categories. While N02BE and R03 show higher sales during winter, R06 peaks in spring and early summer. Applying a single seasonal strategy across all categories may therefore be inefficient.
 
 - **Demand forecasting:** Use historical monthly sales and seasonal indices as a starting point for forecasting future demand, while incorporating additional data to improve forecast accuracy.
+
+These recommendations are based on historical sales patterns and should be validated against actual inventory levels, stock availability and operational constraints before implementation.
 
 ## Limitations
 
