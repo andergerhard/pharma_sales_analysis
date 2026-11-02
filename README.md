@@ -8,11 +8,6 @@ Using SQL in PostgreSQL (data checks and analysis) and Power BI (visuals), the a
 
 The objective is to turn historical sales data into actionable business insights while demonstrating practical skills in data cleaning, SQL-based analysis, KPI calculation, and data visualization.
 
-## Dashboard Preview
-<kbd> <img src="visuals/dashboard_sales_overview.png" width="850"> </kbd>
-<kbd> <img src="visuals/dashboard_seasonality_analysis.png" width="850"> </kbd>
-<kbd> <img src="visuals/dashboard_category_performance.png" width="850"> </kbd>
-
 ## Key findings
 
 - Sales are highly concentrated. **N02BE** alone accounts for 49.38% of total sales, and the top 3 categories (**N02BE**, **N05B**, **R03**) reach 73.09%.
@@ -20,7 +15,13 @@ The objective is to turn historical sales data into actionable business insights
 - Growth is uneven across categories. **R03** and **R06** grow most consistently, **N02BA** is the only category in sustained decline, and the rest follow mixed paths.
 - Seasonality is clear. Total sales are above the average month from October to March and below it from April to September. **R06** is the exception: it peaks in spring.
 
-<kbd> <img src="visuals/Q3_monthly_sales_trend_by_year.png" width="600"> </kbd>
+## Dashboard Preview
+<kbd> <img src="visuals/dashboard_sales_overview.png" width="900"> </kbd>
+---
+<kbd> <img src="visuals/dashboard_seasonality_analysis.png" width="900"> </kbd>
+---
+<kbd> <img src="visuals/dashboard_category_performance.png" width="900"> </kbd>
+---
 
 ## Business context and questions
 
