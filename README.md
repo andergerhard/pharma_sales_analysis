@@ -17,11 +17,10 @@ The objective is to turn historical sales data into actionable business insights
 
 ## Dashboard Preview
 <kbd> <img src="visuals/dashboard_sales_overview.png" width="900"> </kbd>
----
+<br> </br>
 <kbd> <img src="visuals/dashboard_seasonality_analysis.png" width="900"> </kbd>
----
+<br> </br>
 <kbd> <img src="visuals/dashboard_category_performance.png" width="900"> </kbd>
----
 
 ## Business context and questions
 
