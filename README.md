@@ -84,7 +84,7 @@ The seasonal index compares each month with the average month (100 = average).
 
 - ***Declining:*** **N02BA** is the only category in sustained decline (CAGR -8.7%). It grew only in 2016 (+2.90%), and 2018 is its lowest year.
 
-- ***Mixed:*** **N02BE** (CAGR 4.9%) is highly volatile, with -30.57% in 2017 and +21.30% in 2018. **N05C** swings between -41.68% (2015) and +30.31% (2018). **M01AB** and **M01AE** peaked in 2016 and have declined or stagnated since, so their positive CAGR (5.4% and 2.5%) overstates their recent trend.
+- ***Mixed:*** **N05C** (CAGR -3.6%) is highly volatile, with -41.68% in 2015 and +30.31% in 2018. **N02BE** (CAGR 4.9%) swings between -30.57% (2017) and +21.30% (2018). **M01AB** and **M01AE** peaked in 2016 and have declined or stagnated since, so their positive CAGR (5.4% and 2.5%) overstates their recent trend.
   
 - All 8 categories fell in 2017, the largest drop being **N02BE** (-30.57%), which points to a common factor. The data does not show its cause.
 - CAGR depends on the starting year. The negative CAGR of **N05B** and **N05C** is driven by a high 2014 and should be read together with the year-over-year table.
