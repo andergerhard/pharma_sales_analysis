@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project analyzes pharmaceutical sales across 8 ATC drug categories from 2014 to 2019 to identify sales trends, their evolution over the years, compare performance across categories, and investigate monthly seasonality.
+This project analyzes pharmaceutical sales data from a pharmacy across eight ATC categories from 2014 to 2019 to identify sales trends, compare category performance, and investigate monthly seasonality.
 
 Using SQL in PostgreSQL (data checks and analysis) and Power BI (visuals), the analysis covers sales concentration, year-over-year (YoY) growth, compound annual growth rates (CAGR), and seasonal patterns across all categories.
 
