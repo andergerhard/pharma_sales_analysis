@@ -9,9 +9,9 @@ Using SQL in PostgreSQL (data checks and analysis) and Power BI (visuals), the a
 The objective is to turn historical sales data into actionable business insights while demonstrating practical skills in data cleaning, SQL-based analysis, KPI calculation, and data visualization.
 
 ## Dashboard Preview
-<kbd> <img src="dashboard_sales_overview.png" width="700"> </kbd>
-<kbd> <img src="dashboard_seasonality_analysis.png" width="700"> </kbd>
-<kbd> <img src="dashboard_category_performance.png" width="700"> </kbd>
+<kbd> <img src="visuals/dashboard_sales_overview.png" width="850"> </kbd>
+<kbd> <img src="visuals/dashboard_seasonality_analysis.png" width="850"> </kbd>
+<kbd> <img src="visuals/dashboard_category_performance.png" width="850"> </kbd>
 
 ## Key findings
 
