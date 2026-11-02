@@ -1,6 +1,17 @@
 # Pharmaceutical Sales Analysis by ATC Category
 
-Analysis of almost six years of daily pharmaceutical sales across 8 ATC drug categories: which categories drive sales, how sales evolved year by year, and how strongly they follow the seasons. Built with PostgreSQL (data checks and analysis) and Power BI (visuals).
+## Project Overview
+
+This project analyzes pharmaceutical sales across 8 ATC drug categories from 2014 to 2019 to identify sales trends, their evolution over the years, compare performance across categories, and investigate monthly seasonality.
+
+Using SQL in PostgreSQL (data checks and analysis) and Power BI (visuals), the analysis covers sales concentration, year-over-year (YoY) growth, compound annual growth rates (CAGR), and seasonal patterns across all categories.
+
+The objective is to turn historical sales data into actionable business insights while demonstrating practical skills in data cleaning, SQL-based analysis, KPI calculation, and data visualization.
+
+## Dashboard Preview
+<kbd> <img src="dashboard_sales_overview.png" width="700"> </kbd>
+<kbd> <img src="dashboard_seasonality_analysis.png" width="700"> </kbd>
+<kbd> <img src="dashboard_category_performance.png" width="700"> </kbd>
 
 ## Key findings
 
