@@ -62,6 +62,8 @@ The four raw tables were loaded unchanged into PostgreSQL and checked before any
 
 <kbd> <img src="visuals/Q1_sales_concentration_by_category.png" width="700"> </kbd>
 
+SQL: [`sql/04_Sales_By_Category.sql`](sql/04_Sales_By_Category.sql)
+
 ### 2. How have total sales evolved over the years?
 - Sales grew from 2014 to 2016 (+12.42% in 2015, +10.91% in 2016).
 - They then fell 23.12% in 2017. The data does not show the cause.
@@ -69,6 +71,8 @@ The four raw tables were loaded unchanged into PostgreSQL and checked before any
 - Comparing January to September in every year so that 2019 can be included, 2019 is flat versus 2018 (+0.70%). This excludes October to December, so it should not be extrapolated to the full year.
 
 <kbd> <img src="visuals/Q2_total_sales_yoy_growth.png" width="460"> </kbd> <kbd> <img src="visuals/Q2_total_sales_yoy_growth_Jan-Sept.png" width="480"> </kbd>
+
+SQL: [`sql/05_Annual_Sales_Evolution.sql`](sql/05_Annual_Sales_Evolution.sql)
 
 ### 3. Is there a seasonal pattern in pharmaceutical sales?
 
@@ -89,6 +93,8 @@ The seasonal index compares each month with the average month (100 = average).
 
 <kbd> <img src="visuals/Q3_seasonal_index_by_category_heatmap.png" width="600"> </kbd>
 
+SQL: [`sql/06_Seasonal_Pattern.sql`](sql/06_Seasonal_Pattern.sql)
+
 ### 4. Which categories are growing or declining year over year?
 
 - ***Growing:*** **R03** (CAGR 2014-2018: 20.6%) and R06 (10.6%) grew in three of the four years. Their only decline was in 2017 (-11.39% and -7.16%), and 2018 is the highest year of the series for both.
@@ -102,6 +108,8 @@ The seasonal index compares each month with the average month (100 = average).
 
 <kbd> <img src="visuals/Q4_yoy_growth_by_category_heatmap.png" width="500"> </kbd>
 <kbd> <img src="visuals/Q4_cagr_by_category.png" width="450"> </kbd>
+
+SQL: [`sql/07_Growth_By_Category.sql`](sql/07_Growth_By_Category.sql)
 
 ## Recommendations
 
