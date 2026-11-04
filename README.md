@@ -24,7 +24,7 @@ The objective is to turn historical sales data into actionable business insights
 
 ## Business context and questions
 
-A company that sells or distributes medicines needs to know which product groups carry its sales, whether they are growing, and when demand peaks, to support decisions such as stock planning and campaign timing. This project answers four questions with that in mind:
+A pharmacy needs to know which product groups carry its sales, whether they are growing, and when demand peaks, to support decisions such as stock planning and campaign timing. This project answers four questions with that in mind:
 
 1. Which ATC categories concentrate most of the sales?
 2. How have total sales evolved over the years?
