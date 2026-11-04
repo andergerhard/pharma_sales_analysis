@@ -88,7 +88,7 @@ The seasonal index compares each month with the average month (100 = average).
 
 **By category**
 
-- **N02BE** and **R03** reinforce the overall seasonal pattern, with pronounced winter peaks and summer declines. **N02BE** ranges from 66 in July (34% below average) to 142 in January (42% above average). **R03** ranges from 54 in July (46% below average) to 144 in December (44% above average).
+- **N02BE** and **R03** reinforce the overall seasonal pattern, with pronounced winter peaks and summer declines. **N02BE** ranges from 66 in July (34% below average) to 142 in October (42% above average) and 138 in January (38% above average). **R03** ranges from 54 in July (46% below average) to 144 in December (44% above average).
 - **R06** shows the opposite pattern, with below-average sales during winter and above-average sales in spring and early summer. Its lowest indices are in November (54), December (48) and February (55), while April (163), May (179) and June (153) record sales 63%, 79% and 53% above average, respectively.
 
 <kbd> <img src="visuals/Q3_seasonal_index_by_category_heatmap.png" width="600"> </kbd>
