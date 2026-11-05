@@ -132,3 +132,47 @@ These recommendations are based on historical sales patterns and should be valid
 - **Unexplained sales decline:** The observed decline in sales in 2017 cannot be attributed to a specific cause, as the dataset does not provide additional market or business context.
 
 - **CAGR sensitivity:** CAGR results depend on the selected starting and ending years and may not fully reflect intermediate fluctuations, particularly when analysing periods with significant changes in sales.
+
+## SQL techniques used
+- Raw to clean pattern in PostgreSQL: raw tables loaded unchanged, cleaned tables built on top
+- Data quality and cross-table consistency checks
+- Chained **CTEs** to structure each analysis step
+- **Window functions** (`SUM() OVER`, `LAG()`) for shares, cumulative percentages and year-over-year growth
+- **Unpivoting columns** into rows with `UNION ALL` and `LATERAL` with `VALUES`
+- **Conditional aggregation** with `FILTER`
+
+## Repository structure
+
+```text
+pharma_sales_analysis/
+├── README.md
+├── data/
+│   ├── salesdaily.csv
+│   ├── saleshourly.csv
+│   ├── salesmonthly.csv
+│   └── salesweekly.csv
+├── sql/
+│   ├── 01_Create_Tables.sql            Create raw tables
+│   ├── 02_Data_Quality_Check.sql       Data quality checks
+│   ├── 03_Cleaning.sql                 Create clean tables
+│   ├── 04_Sales_By_Category.sql        Q1: sales concentration
+│   ├── 05_Annual_Sales_Evolution.sql   Q2: annual evolution
+│   ├── 06_Seasonal_Pattern.sql         Q3: seasonality
+│   └── 07_Growth_By_Category.sql       Q4: growth by category
+├── powerBI/
+│   ├── pharma_sales.pbix               Power BI report
+│   └── pharma_sales_dashboard.pdf      Full dashboard (3 pages)
+└── visuals/                            Charts used in this README
+    ├── Q1_ to Q4_ images               Charts for each analysis question
+    └── dashboard_ images               The three dashboard pages
+```
+## How to reproduce
+
+1. Create a PostgreSQL database and run `sql/01_Create_Tables.sql` to create the raw tables.
+2. Import the CSV files from `data/` into the matching raw tables.
+3. Run the remaining scripts in `sql/` in numerical order: `02_Data_Quality_Check.sql`, `03_Cleaning.sql`, and then `04` to `07`, which contain one analysis each.
+4. To explore the dashboard, open `powerBI/pharma_sales.pbix` with Power BI Desktop and point its data source to your own database. A static copy is in `powerBI/pharma_sales_dashboard.pdf`.
+
+## Author
+
+Ander Gerhard · [LinkedIn](https://www.linkedin.com/in/ander-gerhard-gaxiola-360643207/)
