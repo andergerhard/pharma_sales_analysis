@@ -70,7 +70,7 @@ SQL: [`sql/04_Sales_By_Category.sql`](sql/04_Sales_By_Category.sql)
 - 2018 rebounded +17.97%, back to the average level of 2014-2016 but still about 9% below the 2016 peak.
 - Comparing January to September in every year so that 2019 can be included, 2019 is flat versus 2018 (+0.70%). This excludes October to December, so it should not be extrapolated to the full year.
 
-<kbd> <img src="visuals/Q2_total_sales_yoy_growth.png" width="460"> </kbd> <kbd> <img src="visuals/Q2_total_sales_yoy_growth_Jan-Sept.png" width="480"> </kbd>
+<kbd> <img src="visuals/Q2_total_sales_yoy_growth.png" width="600"> </kbd>
 
 SQL: [`sql/05_Annual_Sales_Evolution.sql`](sql/05_Annual_Sales_Evolution.sql)
 
